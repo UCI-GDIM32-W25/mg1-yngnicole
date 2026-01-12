@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         // instantiating. The SPACE key plants a seed, which:
         if (Input.GetKey(KeyCode.Space))
         {
-            Instantiate(_playerTransform);
+            Instantiate(_plantPrefab);
         }
         
 
