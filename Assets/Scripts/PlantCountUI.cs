@@ -13,5 +13,7 @@ public class PlantCountUI : MonoBehaviour
         // Increases the number of seeds the player has planted, which is displayed in the UI.
         _plantedText.text = "Seeds Planted: " + seedsPlanted;
 
+        Debug.Log("Planted text object: " + _plantedText.name);
+        Debug.Log("Remaining text object: " + _remainingText.name);
     }
 }
