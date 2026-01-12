@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     public void PlantSeed ()
     {
         Instantiate(
-            _plantPrefab,
+            _plantPrefab
             );
     }
 }
