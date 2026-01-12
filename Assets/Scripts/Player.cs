@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
     {
         _numSeedsLeft = _numSeeds;
         _numSeedsPlanted = 0;
+
+        if (_plantCountUI == null)
+        {
+            Debug.LogError("PlantCountUI is NOT assigned on Player!");
+        }
     }
 
     private void Update()
@@ -36,10 +41,6 @@ public class Player : MonoBehaviour
         {
             PlantSeed();
         }
-        
-
-        
-
     
     }
 
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour
         // Increases the number of seeds the player has planted
         _numSeedsLeft--;
         _numSeedsPlanted++;
-        
+
+        _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
     }
 }
