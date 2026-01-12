@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         float movementX = Input.GetAxisRaw("Horizontal");
         float movementY = Input.GetAxisRaw("Vertical");
         
-        Vector2 movement = new Vector2(movementX, movementY);
+        UnityEngine.Vector2 movement = new UnityEngine.Vector2(movementX, movementY);
 
         transform.Translate(movement * _speed * Time.deltaTime);
 
