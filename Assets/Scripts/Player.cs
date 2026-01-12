@@ -29,22 +29,24 @@ public class Player : MonoBehaviour
 
         transform.Translate(movement * _speed * Time.deltaTime);
 
-        // The SPACE key plants a seed, which:
+        // instantiating. The SPACE key plants a seed, which:
+        if (Input.GetKey(KeyCode.Space))
+        {
+            GameObject plant = Instantiate(_plantPrefab);
+        }
+        
+
         // Checks to see if the player has any seeds left.
         // If they do, it performs actions 3 - 5; otherwise, nothing happens.
         // Makes a plant appear at the player’s location.
         // Decreases the number of seeds the player has left,
-        // Increases the number of seeds the player has planted
 
-        //planting seed. instantiating SPACE key plants a seed, which: 
-        // needs to have amount of seeds
-        // Checks to see if the player has any seeds left. If they do, it performs actions 3-5; otherwise, nothing happens.
+    
     }
 
     public void PlantSeed ()
     {
         //having a plant to call from 
-        // Makes a plant appear at the player’s location.
-        //
+      
     }
 }
