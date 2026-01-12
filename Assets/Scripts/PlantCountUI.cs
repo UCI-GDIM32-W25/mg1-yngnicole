@@ -8,6 +8,7 @@ public class PlantCountUI : MonoBehaviour
 
     public void UpdateSeeds (int seedsLeft, int seedsPlanted)
     {
-        
+        // Decreases the number of seeds the player has left, which is displayed in the UI.
+        // Increases the number of seeds the player has planted, which is displayed in the UI.
     }
 }
