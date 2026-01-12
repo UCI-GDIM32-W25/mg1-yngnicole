@@ -2,6 +2,7 @@ using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.X86;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-        
+        _numSeedsLeft = _numSeeds;
+        _numSeedsPlanted = 0;
     }
 
     private void Update()
@@ -29,23 +31,31 @@ public class Player : MonoBehaviour
 
         transform.Translate(movement * _speed * Time.deltaTime);
 
-        // instantiating. The SPACE key plants a seed, which:
-        if (Input.GetKey(KeyCode.Space))
+        // The SPACE key plants a seed
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             PlantSeed();
         }
         
 
-        // Checks to see if the player has any seeds left.
-        // If they do, it performs actions 3 - 5; otherwise, nothing happens.
-        // Makes a plant appear at the player’s location.
-        // Decreases the number of seeds the player has left,
+        
 
     
     }
 
     public void PlantSeed ()
     {
-        Instantiate(_plantPrefab);
+        // Checks to see if the player has any seeds left.
+        if (_numSeedsLeft <= 0)
+            return;
+
+         // Makes a plant appear at the player’s location.
+        Instantiate(_plantPrefab, transform.position,UnityEngine.Quaternion.identity);
+
+        // Decreases the number of seeds the player has left
+        // Increases the number of seeds the player has planted
+        _numSeedsLeft--;
+        _numSeedsPlanted++;
+        
     }
 }
