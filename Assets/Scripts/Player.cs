@@ -18,8 +18,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        float movementX = Input.GetAxis("Horizontal");
-        float movementY = Input.GetAxis("Vertical");
+        float movementX = Input.GetAxisRaw("Horizontal");
+        float movementY = Input.GetAxisRaw("Vertical");
         
         Vector2 movement = new Vector2(movementX, movementY);
 
