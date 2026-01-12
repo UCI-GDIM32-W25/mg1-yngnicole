@@ -1,4 +1,7 @@
+using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 
 public class Player : MonoBehaviour
 {
@@ -18,14 +21,21 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        //sprite movement with WASD and arrow keys
         float movementX = Input.GetAxisRaw("Horizontal");
         float movementY = Input.GetAxisRaw("Vertical");
         
         Vector2 movement = new Vector2(movementX, movementY);
 
         transform.Translate(movement * _speed * Time.deltaTime);
-        
-        //sprite movement WASD and/or arrow keys can be used to move the player.
+
+        // The SPACE key plants a seed, which:
+        // Checks to see if the player has any seeds left.
+        // If they do, it performs actions 3 - 5; otherwise, nothing happens.
+        // Makes a plant appear at the player’s location.
+        // Decreases the number of seeds the player has left,
+        // Increases the number of seeds the player has planted
+
         //planting seed. instantiating SPACE key plants a seed, which: 
         // needs to have amount of seeds
         // Checks to see if the player has any seeds left. If they do, it performs actions 3-5; otherwise, nothing happens.
