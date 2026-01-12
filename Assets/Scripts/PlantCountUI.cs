@@ -5,7 +5,6 @@ public class PlantCountUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _plantedText;
     [SerializeField] private TMP_Text _remainingText;
-
     public void UpdateSeeds (int seedsLeft, int seedsPlanted)
     {
         // Decreases the number of seeds the player has left, which is displayed in the UI.
