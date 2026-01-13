@@ -19,8 +19,6 @@ public class Player : MonoBehaviour
     {
         _numSeedsLeft = _numSeeds;
         _numSeedsPlanted = 0;
-
-
     }
 
     private void Update()
